@@ -1,9 +1,6 @@
 import java.util.Scanner;
-
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         System.out.println("Введи начальные данные");
         Scanner vvod = new Scanner(System.in);
@@ -17,13 +14,14 @@ public class Main {
         }
         int a = 0;
         for (int i = 0; i < pointsQuantity; i++) {
-            if (Point.calcDist(startFrog, route[i]) >= frog.tongueLenght) a++;
+            if (Point.calcDist(startFrog, route[i]) > frog.tongueLenght) {
+                a++; if (a==pointsQuantity) System.out.println("Yes");
+            }
             else {
                 a++;
                 System.out.println("Лягушка съела Тему в точке " + a);
                 break;
             }
-            if (a == pointsQuantity) System.out.println("Yes");
         }
     }
 }
